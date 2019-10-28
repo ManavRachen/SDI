@@ -1,4 +1,25 @@
+//#include "stdAfx.h"
+//#include "pch.h"
+#include <iostream>
+#include <ctime>
 
+//Operators
+LinkedList::LinkedList() {
+	this->head = NULL;
+}
+LinkedList::~LinkedList() {
+	Node* head = this->head;
+	Node* next;
+
+	while (head) {
+		next = head->next;
+		delete head;
+		head = next;
+	}
+}
+Node* LinkedList::operator[](unsigned int pos) {
+	return at(pos);
+}
 
 //Public Functions
 void LinkedList::append(int data) {
