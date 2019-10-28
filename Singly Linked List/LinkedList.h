@@ -18,7 +18,7 @@ public:
 	Node* front(); //Return first node
 	Node* back(); //Return final node
 
-	void populate(unsigned int size); //Add x amount of random nodes to start of list
+	void populate(unsigned int size); //Add x amount of random nodes to end of list
 
 	unsigned int size();
 	void print();
@@ -28,5 +28,7 @@ private:
 	void OutOfBounds(unsigned int pos); //Checks if input is in range
 };
 
-LinkedList* ModifyList(LinkedList* L);
+void ModifyList(LinkedList* L);
 int Input(int upper, int lower);
+
+void MemLeakTest(LinkedList* L);
