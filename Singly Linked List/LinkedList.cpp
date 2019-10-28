@@ -99,7 +99,7 @@ Node* LinkedList::front(){
 	return head;
 }
 Node* LinkedList::back(){
-	return at(size());
+	return at(size() - 1);
 }
 
 void LinkedList::populate(unsigned int size) {
