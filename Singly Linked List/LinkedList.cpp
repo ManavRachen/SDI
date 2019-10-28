@@ -1,24 +1,3 @@
-#include "pch.h"
-#include <iostream>
-#include <ctime>
-
-//Operators
-LinkedList::LinkedList() {
-	this->head = NULL;
-}
-LinkedList::~LinkedList() {
-	Node* head = this->head;
-	Node* next;
-
-	while (head) {
-		next = head->next;
-		delete head;
-		head = next;		
-	}
-}
-Node* LinkedList::operator[](unsigned int pos) {
-	return at(pos);
-}
 
 
 //Public Functions
@@ -83,7 +62,7 @@ void LinkedList::del(unsigned int pos) {
 }
 
 Node* LinkedList::at(unsigned int pos) {
-	//OutOfBounds(pos);
+	OutOfBounds(pos);
 
 	Node* node = this->head;
 
@@ -143,8 +122,9 @@ void LinkedList::OutOfBounds(unsigned int pos) {
 }
 
 
+
 //IO Loop
-LinkedList* ModifyList(LinkedList* L) {
+void ModifyList(LinkedList* L) {
 	int input, pos, data, amount;
 
 	while (true) {
@@ -167,9 +147,9 @@ LinkedList* ModifyList(LinkedList* L) {
 
 			break;
 		case 2:
-			//int pos;
 			if (!L->size()) { std::cout << "Empty List" << std::endl; break; }
 			std::cout << "which node?" << std::endl << "~ ";
+
 			pos = Input(1,L->size());
 			std::cout << std::endl << L->at(pos - 1)->data << std::endl;
 
@@ -179,11 +159,13 @@ LinkedList* ModifyList(LinkedList* L) {
 
 			break;
 		case 4:
-			//int data,pos;
 			std::cout << "what?" << std::endl << "~ ";
 			std::cin >> data;
+
+			if (!L->size()) { L->prepend(data); break; }
+
 			std::cout << "where?" << std::endl << "~ ";
-			pos = Input(1, L->size());
+			pos = Input(1, L->size() + 1) - 1;
 
 			if (!pos)
 				{ L->prepend(data); }
@@ -194,9 +176,10 @@ LinkedList* ModifyList(LinkedList* L) {
 
 			break;
 		case 5:
-			//int pos;
+			if (!L->size()) { std::cout << "Empty List" << std::endl; break; }
+
 			std::cout << "which?" << std::endl << "~ ";
-			pos = Input(1, L->size());
+			pos = Input(1, L->size()) - 1;
 
 			if (!pos)
 				{ L->popFront(); }
@@ -207,7 +190,6 @@ LinkedList* ModifyList(LinkedList* L) {
 
 			break;
 		case 6:
-			//int amount;
 			std::cout << "how many?" << std::endl << "~ ";
 			std::cin >> amount;
 
@@ -215,8 +197,7 @@ LinkedList* ModifyList(LinkedList* L) {
 
 			break;
 		case 7:
-			return L;
-
+			return;
 		}
 		std::cout << std::endl;
 	}
@@ -232,4 +213,15 @@ int Input(int lower, int upper) {
 	} while (!(inp <= upper) || !(inp >= lower));
 
 	return inp;
+}
+
+void MemLeakTest(LinkedList* L) {
+	while (true) {
+		L->populate(30000);
+
+		int size_ = L->size() - 1;
+		for (int i = size_; i >= 0; i--) {
+			L->del(i);
+		}
+	}
 }
