@@ -20,6 +20,11 @@ class LinkedList
 public:
 
 	//Operators------------------------------------------------------//
+	
+	//Constructor
+	LinkedList() { 
+		head = nullptr; 
+	}
 
 	//Destructor
 	~LinkedList() {
