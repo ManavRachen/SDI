@@ -6,6 +6,6 @@ Requires
 - [Templated Node struct](https://github.com/ManavRachen/SDI/blob/50b1c7cba7caf6bdd0e66a84990b571dce1f7ab6/Nodes/template%20Node.h)
 
 Can 
--insert nodes
--perform dfs post order search
--perform stem rotation and Balancing
+- insert nodes
+- perform dfs post order search
+- perform stem rotation and Balancing
