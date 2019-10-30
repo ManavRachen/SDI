@@ -62,7 +62,7 @@ void LinkedList::popBack() {
 	previous->next = nullptr;
 }
 void LinkedList::popFront() {
-	OutOfBounds(0);
+	if (!front) { OutOfBounds(0) };
 
 	Node* toDelete = head;
 	head = head->next;
@@ -106,7 +106,7 @@ void LinkedList::populate(unsigned int size) {
 	srand( (int) std::time(NULL) );
 
 	for (int i = 0; i <= size - 1; ++i) {
-		append(rand());
+		prepend(rand());
 	}
 }
 
