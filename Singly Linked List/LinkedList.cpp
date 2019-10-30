@@ -62,7 +62,7 @@ void LinkedList::popBack() {
 	previous->next = nullptr;
 }
 void LinkedList::popFront() {
-	if (!front) { OutOfBounds(0) };
+	if (!head) { OutOfBounds(0); }
 
 	Node* toDelete = head;
 	head = head->next;
