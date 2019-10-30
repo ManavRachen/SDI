@@ -3,7 +3,15 @@
 #include <string>
 
 
-int Input(int upper, int lower);
+int Input(int lower, int upper) {
+	int inp;
+	do {
+		std::cout << "Input a number between " << lower << " and " << upper << std::endl << "~ ";
+		std::cin >> inp;
+	} while (!(inp <= upper) || !(inp >= lower));
+
+	return inp;
+}
 
 
 template<typename Type>
