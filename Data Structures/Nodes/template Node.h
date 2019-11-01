@@ -1,11 +1,11 @@
 #pragma once
 
 template<typename Type>
-struct Node
+struct NodeT
 {
 public:
-	~Node() { next = nullptr; }
+	~NodeT() { next = nullptr; }
 
-	Node* next;
+	NodeT* next;
 	Type data;
 };
