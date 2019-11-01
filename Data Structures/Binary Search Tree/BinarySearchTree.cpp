@@ -44,15 +44,15 @@ void BinarySearchTree::addNode(int data) {
 
 //Balances each node in the tree
 void BinarySearchTree::BalanceTree() {
-	LinkedList<DoubleNode*> Stack;
-	DfsPostOrder(&Stack, head);
+	Stack<DoubleNode*> stack;
+	DfsPostOrder(&stack, head);
 	DoubleNode* current;
 
-	while (Stack.front()) {
-		current = Stack.front()->data;
+	while (stack.top()) {
+		current = stack.top()->data;
 		current->left = Rotate(current->left);
 		current->right = Rotate(current->right);
-		Stack.popFront();
+		stack.pop();
 	}
 
 }
