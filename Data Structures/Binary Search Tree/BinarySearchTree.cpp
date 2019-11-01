@@ -143,7 +143,7 @@ DoubleNode* BinarySearchTree::RLrotate(DoubleNode * node) {
 }
 
 //Add all elements in tree into a stack in post order
-void BinarySearchTree::DfsPostOrder(LinkedList<DoubleNode*>* Stack, DoubleNode* node) {
+void BinarySearchTree::DfsPostOrder(Stack<DoubleNode*>* Stack, DoubleNode* node) {
 	if (node == nullptr) { return; }
 
 	DfsPostOrder(Stack, node->left);
