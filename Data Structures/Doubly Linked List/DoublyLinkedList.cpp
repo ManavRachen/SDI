@@ -4,7 +4,8 @@
 
 //Operators
 DoublyLinkedList::DoublyLinkedList() {
-	this->head = NULL;
+	head = nullptr;
+	tail = nullptr;
 }
 DoublyLinkedList::~DoublyLinkedList() {
 	DoubleNode* head = this->head;
