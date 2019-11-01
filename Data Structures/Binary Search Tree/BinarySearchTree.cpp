@@ -40,6 +40,32 @@ void BinarySearchTree::addNode(int data) {
 }
 
 
+//Search Algorithm-------------------------------------------------------------------------------//
+
+//Returns the node that holds the input data, or a null pointer if its not in the list
+DoubleNode* BinarySearchTree::searchFor(int data) {
+	return BinarySearch(data,head);
+}
+
+//Recursive binary search function
+DoubleNode* BinarySearchTree::BinarySearch(int data, DoubleNode* current) {
+
+	if (!current) { return nullptr; }
+
+	if (data < current->data) {
+		current = BinarySearch(data, current->left);
+
+	}
+	else if (data > current->data) {
+		current = BinarySearch(data, current->right);
+	}
+
+	return current;
+
+}
+
+
+
 //Balancing tree---------------------------------------------------------------------------------//
 
 //Balances each node in the tree
