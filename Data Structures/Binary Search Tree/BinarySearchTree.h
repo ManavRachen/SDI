@@ -5,9 +5,11 @@ class BinarySearchTree
 public:
 	BinarySearchTree();
 	void addNode(int data);
+	DoubleNode* searchFor(int data);
 
 private:
 	DoubleNode* head;
+	DoubleNode* BinarySearch(int data, DoubleNode* current);
 
 	void BalanceTree();		
 	int BalanceFactor(DoubleNode* node);
