@@ -1,12 +1,12 @@
 #pragma once
 
 template<typename Type>
-struct DoubleNode
+struct DoubleNodeT
 {
 public:
-	~DoubleNode() { right = nullptr; left = nullptr; }
+	~DoubleNodeT() { right = nullptr; left = nullptr; }
 
-	DoubleNode* left;
-	DoubleNode* right;
+	DoubleNodeT* left;
+	DoubleNodeT* right;
 	Type data;
 };
