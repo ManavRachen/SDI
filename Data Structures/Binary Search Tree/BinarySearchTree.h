@@ -20,6 +20,6 @@ private:
 	DoubleNode* LRrotate(DoubleNode* node);
 	DoubleNode* RLrotate(DoubleNode* node);
 
-	void DfsPostOrder(LinkedList<DoubleNode*>* Stack, DoubleNode* node);
+	void DfsPostOrder(Stack<DoubleNode*>* Stack, DoubleNode* node);
 
 };
