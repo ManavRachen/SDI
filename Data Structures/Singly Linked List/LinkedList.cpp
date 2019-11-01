@@ -39,6 +39,7 @@ void LinkedList::prepend(int data) {
 void LinkedList::insert(int data, unsigned int pos) {
 
 	if (!pos) { prepend(data); return; } //Prepend
+	if (pos == size()) { append(data); return; } //Append
 
 	Node* node = new Node();
 	node->data = data;
