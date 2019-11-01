@@ -6,5 +6,6 @@ Requires
 
 Can 
 - insert nodes
+- perform binary search to find / check for an element in the tree
 - perform dfs post order search
 - perform stem rotation and Balancing
