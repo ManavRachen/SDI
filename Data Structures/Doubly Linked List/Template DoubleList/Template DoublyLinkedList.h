@@ -3,20 +3,20 @@
 #include <string>
 
 template<typename Type = int>
-class DoublyLinkedList
+class DoublyLinkedListT
 {
 public:
 
 	//Operators------------------------------------------------------//
 
 	//Constructor
-	DoublyLinkedList() {
+	DoublyLinkedListT() {
 		head = nullptr;
 		tail = nullptr;
 	}
 
 	//Destructor
-	~DoublyLinkedList() {
+	~DoublyLinkedListT() {
 		DoubleNodeT<Type>* head = this->head;
 		DoubleNodeT<Type>* next;
 
