@@ -17,8 +17,8 @@ public:
 
 	//Destructor
 	~DoublyLinkedList() {
-		DoubleNode<Type>* head = this->head;
-		DoubleNode<Type>* next;
+		DoubleNodeT<Type>* head = this->head;
+		DoubleNodeT<Type>* next;
 
 		while (head) {
 			next = head->right;
@@ -28,7 +28,7 @@ public:
 	}
 
 	//Overloads the [] operator ~ calls at()
-	DoubleNode<Type>* operator[](int pos) {
+	DoubleNodeT<Type>* operator[](int pos) {
 		return at(pos);
 	}
 
@@ -37,7 +37,7 @@ public:
 
 	//Add node at end of list
 	void append(Type data) {
-		DoubleNode<Type>* node = new DoubleNode<Type>();
+		DoubleNodeT<Type>* node = new DoubleNodeT<Type>();
 		node->data = data;
 
 		node->left = tail;
@@ -48,7 +48,7 @@ public:
 
 	//Add node at start of list
 	void prepend(Type data) {
-		DoubleNode<Type>* node = new DoubleNode<Type>();
+		DoubleNodeT<Type>* node = new DoubleNodeT<Type>();
 		node->data = data;
 
 		node->right = head;
@@ -63,15 +63,15 @@ public:
 		if (!pos) { prepend(data); return; } //Prepend
 		if (pos == size()) { append(data); return; } //Append
 
-		DoubleNode<Type>* node = new DoubleNode<Type>();
+		DoubleNodeT<Type>* node = new DoubleNodeT<Type>();
 		node->data = data;
 
 		if (!head) { head = node; tail = node; return; } //Empty
 
 		OutOfBounds(pos - 1);
 
-		DoubleNode<Type>* previous = at(pos - 1);
-		DoubleNode<Type>* after = previous->right;
+		DoubleNodeT<Type>* previous = at(pos - 1);
+		DoubleNodeT<Type>* after = previous->right;
 		node->right = after;
 		node->left = previous;
 		previous->right = node;
@@ -83,8 +83,8 @@ public:
 	void popBack() {
 		if (!tail) { OutOfBounds(0); }
 
-		DoubleNode<Type>* toDelete = tail;
-		DoubleNode<Type>* previous = tail->left;
+		DoubleNodeT<Type>* toDelete = tail;
+		DoubleNodeT<Type>* previous = tail->left;
 		tail = previous;
 		if (previous) { previous->right = nullptr; }
 		else { head = nullptr; }
@@ -95,8 +95,8 @@ public:
 	void popFront() {
 		if (!head) { OutOfBounds(0); }
 
-		DoubleNode<Type>* toDelete = head;
-		DoubleNode<Type>* next = head->right;
+		DoubleNodeT<Type>* toDelete = head;
+		DoubleNodeT<Type>* next = head->right;
 		head = next;
 		if (next) { next->left = nullptr; }
 		else { tail = nullptr; }
@@ -111,8 +111,8 @@ public:
 
 		OutOfBounds(pos);
 
-		DoubleNode<Type>* previous = at(pos - 1);
-		DoubleNode<Type>* current = previous->right;
+		DoubleNodeT<Type>* previous = at(pos - 1);
+		DoubleNodeT<Type>* current = previous->right;
 
 		previous->right = current->right;
 		current->right->left = previous;
@@ -124,22 +124,22 @@ public:
 	//Index and Searching--------------------------------------------//
 
 	//Return final node
-	DoubleNode<Type>* back() {
+	DoubleNodeT<Type>* back() {
 		return tail;
 	}
 
 	//Return first node
-	DoubleNode<Type>* front() {
+	DoubleNodeT<Type>* front() {
 		return head;
 	}
 
 	//Return node at index x
-	DoubleNode<Type>* at(int pos) {
+	DoubleNodeT<Type>* at(int pos) {
 
 		OutOfBounds(pos);
 
 		if (pos >= 0) {
-			DoubleNode<Type>* node = head;
+			DoubleNodeT<Type>* node = head;
 
 			//if (!node) { return head; };
 
@@ -150,7 +150,7 @@ public:
 			return node;
 		}
 		else {
-			DoubleNode<Type>* node = tail;
+			DoubleNodeT<Type>* node = tail;
 
 			//if (!node) { return tail; };
 
@@ -165,7 +165,7 @@ public:
 
 	//Returns size of the list
 	unsigned int size() {
-		DoubleNode<Type>* head = this->head;
+		DoubleNodeT<Type>* head = this->head;
 		int count = 0;
 
 		while (head) {
@@ -179,8 +179,8 @@ public:
 
 
 private:
-	DoubleNode<Type>* head;
-	DoubleNode<Type>* tail;
+	DoubleNodeT<Type>* head;
+	DoubleNodeT<Type>* tail;
 
 	//Checks if input is in range
 	void OutOfBounds(int pos) {
