@@ -3,17 +3,6 @@
 #include <string>
 
 
-int Input(int lower, int upper) {
-	int inp;
-	do {
-		std::cout << "Input a number between " << lower << " and " << upper << std::endl << "~ ";
-		std::cin >> inp;
-	} while (!(inp <= upper) || !(inp >= lower));
-
-	return inp;
-}
-
-
 template<typename Type>
 class LinkedList
 {
@@ -178,100 +167,6 @@ public:
 		std::cout << std::endl;
 	}
 
-	//User Interface to modify the list
-	void ModifyList() {
-		int input, pos, amount;
-		Type data;
-
-		while (true) {
-			std::cout << "Select an Option" << std::endl;
-			std::cout << "1. View List" << std::endl;
-			std::cout << "2. View Particular Node" << std::endl;
-			std::cout << "3. Show List Size" << std::endl;
-			std::cout << "4. Insert Node into List" << std::endl;
-			std::cout << "5. Delete Node from List" << std::endl;
-			std::cout << "6. Fill List" << std::endl;
-			std::cout << "7. Return" << std::endl;
-
-			input = Input(1, 7);
-
-			switch (input) {
-			case 1:
-				if (!size()) { std::cout << "Empty List" << std::endl; break; }
-
-				print();
-
-				break;
-			case 2:
-				if (!size()) { std::cout << "Empty List" << std::endl; break; }
-				std::cout << "which node?" << std::endl << "~ ";
-
-				pos = Input(1, size());
-				std::cout << std::endl << at(pos - 1)->data << std::endl;
-
-				break;
-			case 3:
-				std::cout << size();
-
-				break;
-			case 4:
-				std::cout << "what?" << std::endl << "~ ";
-				std::cin >> data;
-
-				if (!size()) { prepend(data); break; }
-
-				std::cout << "where?" << std::endl << "~ ";
-				pos = Input(1, size() + 1) - 1;
-
-				if (!pos)
-				{
-					prepend(data);
-				}
-				else if (pos == size())
-				{
-					append(data);
-				}
-				else
-				{
-					insert(data, pos);
-				}
-
-				break;
-			case 5:
-				if (!size()) { std::cout << "Empty List" << std::endl; break; }
-
-				std::cout << "which?" << std::endl << "~ ";
-				pos = Input(1, size()) - 1;
-
-				if (!pos)
-				{
-					popFront();
-				}
-				else if (pos == size())
-				{
-					popBack();
-				}
-				else
-				{
-					del(pos);
-				}
-
-				break;
-			case 6:
-				std::cout << "how many?" << std::endl << "~ ";
-				std::cin >> amount;
-
-				populate(amount);
-
-				break;
-			case 7:
-				return;
-			}
-			std::cout << std::endl;
-		}
-
-
-	}
 
 	
 private:	
