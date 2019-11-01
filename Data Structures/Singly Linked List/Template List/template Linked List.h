@@ -4,19 +4,19 @@
 
 
 template<typename Type>
-class LinkedList
+class LinkedListT
 {
 public:
 
 	//Operators------------------------------------------------------//
 	
 	//Constructor
-	LinkedList() { 
+	LinkedListT() { 
 		head = nullptr; 
 	}
 
 	//Destructor
-	~LinkedList() {
+	~LinkedListT() {
 		NodeT<Type>* head = this->head;
 		NodeT<Type>* next;
 
