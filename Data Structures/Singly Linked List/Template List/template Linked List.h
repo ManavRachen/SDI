@@ -17,8 +17,8 @@ public:
 
 	//Destructor
 	~LinkedList() {
-		Node<Type>* head = this->head;
-		Node<Type>* next;
+		NodeT<Type>* head = this->head;
+		NodeT<Type>* next;
 
 		while (head) {
 			next = head->next;
@@ -28,7 +28,7 @@ public:
 	}
 
 	//Overloads the [] operator ~ calls at()
-	Node<Type>* operator[](unsigned int pos) {
+	NodeT<Type>* operator[](unsigned int pos) {
 		return at(pos);
 	} 
 	
@@ -36,7 +36,7 @@ public:
 
 	//Add node at end of list
 	void append(Type data) {
-		Node<Type>* node = new Node<Type>();
+		NodeT<Type>* node = new Node<Type>();
 		node->data = data;
 
 		if (!head) { head = node; }
@@ -45,7 +45,7 @@ public:
 
 	//Add node at start of list
 	void prepend(Type data) {
-		Node<Type>* node = new Node<Type>();
+		NodeT<Type>* node = new NodeT<Type>();
 		node->data = data;
 
 		node->next = head;
@@ -57,14 +57,14 @@ public:
 
 		if (!pos) { prepend(data); return; } //Prepend
 
-		Node<Type>* node = new Node<Type>();
+		NodeT<Type>* node = new NodeT<Type>();
 		node->data = data;
 
 		if (!head) { head = node; return; } //Empty
 
 		OutOfBounds(pos - 1);
 
-		Node<Type>* previous = at(pos);
+		NodeT<Type>* previous = at(pos);
 		node->next = previous->next;
 		previous->next = node;
 
@@ -75,7 +75,7 @@ public:
 		if (!head->next) { popFront(); return; }
 		OutOfBounds(size() - 1);
 
-		Node<Type>* previous = at(size() - 2);
+		NodeT<Type>* previous = at(size() - 2);
 		delete previous->next;
 		previous->next = nullptr;
 	}
@@ -84,7 +84,7 @@ public:
 	void popFront() {
 		if (!head) { OutOfBounds(0); }
 
-		Node<Type>* toDelete = head;
+		NodeT<Type>* toDelete = head;
 		head = head->next;
 		delete toDelete;
 	}
@@ -96,8 +96,8 @@ public:
 
 		OutOfBounds(pos);
 
-		Node<Type>* previous = at(pos - 1);
-		Node<Type>* current = previous->next;
+		NodeT<Type>* previous = at(pos - 1);
+		NodeT<Type>* current = previous->next;
 
 		previous->next = current->next;
 		delete current;
@@ -107,20 +107,20 @@ public:
 	//Index and Searching--------------------------------------------//
 
 	//Return final node
-	Node<Type>* back() {
+	NodeT<Type>* back() {
 		return at(size() - 1);
 	}
 
 	//Return first node
-	Node<Type>* front() {
+	NodeT<Type>* front() {
 		return head;
 	}
 
 	//Return node at index x
-	Node<Type>* at(unsigned int pos) {
+	NodeT<Type>* at(unsigned int pos) {
 		OutOfBounds(pos);
 
-		Node<Type>* node = this->head;
+		NodeT<Type>* node = this->head;
 
 		if (!node) { return head; };
 
@@ -133,7 +133,7 @@ public:
 
 	//Returns size of the list
 	unsigned int size() {
-		Node<Type>* head = this->head;
+		NodeT<Type>* head = this->head;
 		int count = 0;
 
 		while (head) {
@@ -156,7 +156,7 @@ public:
 
 	//Prints the list
 	void print() {
-		Node<Type>* node = head;
+		NodeT<Type>* node = head;
 		int count = 1;
 
 		while (node) {
@@ -170,7 +170,7 @@ public:
 
 	
 private:	
-	Node<Type>* head;
+	NodeT<Type>* head;
 
 	//Checks if input is in range
 	void OutOfBounds(unsigned int pos) {
