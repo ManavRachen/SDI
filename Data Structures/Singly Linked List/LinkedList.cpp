@@ -1,5 +1,5 @@
 //#include "stdAfx.h"
-//#include "pch.h"
+#include "../pch.h"
 #include <iostream>
 #include <ctime>
 

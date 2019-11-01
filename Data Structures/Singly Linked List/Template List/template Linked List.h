@@ -36,7 +36,7 @@ public:
 
 	//Add node at end of list
 	void append(Type data) {
-		NodeT<Type>* node = new Node<Type>();
+		NodeT<Type>* node = new NodeT<Type>();
 		node->data = data;
 
 		if (!head) { head = node; }

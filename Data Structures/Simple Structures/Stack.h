@@ -6,22 +6,22 @@ public:
 	Stack() { head = nullptr; }
 
 	void push(Type data) {
-		Node<Type>* node = new Node<Type>();
+		NodeT<Type>* node = new NodeT<Type>();
 		node->data = data;
 		node->next = head;
 		head = node;
 	}
 	
 	void pop() {
-		Node<Type>* toDelete = head;
+		NodeT<Type>* toDelete = head;
 		head = head->next ;
 		delete toDelete;
 	}
 
-	Node<Type>* top() {
+	NodeT<Type>* top() {
 		return head;
 	}
 
 private:
-	Node<Type>* head;
+	NodeT<Type>* head;
 };

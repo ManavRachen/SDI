@@ -1,5 +1,5 @@
 //#include "stdAfx.h"
-//#include "pch.h"
+#include "../pch.h"
 
 //Operators--------------------------------------------------------------------------------------//
 
@@ -175,5 +175,5 @@ void BinarySearchTree::DfsPostOrder(Stack<DoubleNode*>* Stack, DoubleNode* node)
 	DfsPostOrder(Stack, node->left);
 	DfsPostOrder(Stack, node->right);
 
-	Stack->append(node);
+	Stack->push(node);
 }
