@@ -2,10 +2,6 @@
 #include <vector>
 using namespace std;
 
-void main() {
-	vector<int> c;
-}
-
 void MergeSort(vector<int> array_) {
 
 }
