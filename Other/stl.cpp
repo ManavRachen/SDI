@@ -18,7 +18,8 @@ using namespace std;
 //		cout << p << " ";
 //
 //	return 0;
-//}
+//}
+
 //int main()
 //{
 //	float myFloat = 0.0f;
@@ -42,4 +43,4 @@ int main()
 	cout << "cos(" << myFloat << ") = " << cos(myFloat) << endl;
 	cout << "tan(" << myFloat << ") = " << tan(myFloat) << endl;
 	return 0;
-}
+}
