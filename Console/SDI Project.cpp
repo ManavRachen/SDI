@@ -1,7 +1,11 @@
 #include "pch.h"
 #include <iostream>
 
-void program1() {}
+void program1() {
+	LinkedList L;
+	L.append(1);
+	std::cout << L.back()->data;
+}
 
 
 

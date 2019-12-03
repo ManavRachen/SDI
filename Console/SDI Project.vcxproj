@@ -154,6 +154,12 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Data Structures\Binary Search Tree\BinarySearchTree.cpp" />
+    <ClCompile Include="..\Data Structures\Doubly Linked List\DoublyLinkedList.cpp" />
+    <ClCompile Include="..\Data Structures\Singly Linked List\LinkedList.cpp" />
+    <ClCompile Include="..\Data Structures\Sorting Algorithms\Bubble Sort.cpp" />
+    <ClCompile Include="..\Data Structures\Sorting Algorithms\Insertion Sort.cpp" />
+    <ClCompile Include="..\Data Structures\Sorting Algorithms\Merge Sort.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
