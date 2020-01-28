@@ -136,7 +136,7 @@ DoubleNode* DoublyLinkedList::back() {
 void DoublyLinkedList::populate(unsigned int size) {
 	srand((int)std::time(NULL));
 
-	for (int i = 0; i <= size - 1; ++i) {
+	for (unsigned int i = 0; i <= size - 1; ++i) {
 		prepend(rand());
 	}
 }
@@ -164,12 +164,17 @@ void DoublyLinkedList::print() {
 	std::cout << std::endl;
 }
 
+//Sorting
+
+void DoublyLinkedList::sort() {
+	this->selectionSort(this);
+}
 
 //Private Functions
 void DoublyLinkedList::OutOfBounds(int pos) {
 	if (pos < 0) { pos = abs(pos) - 1; }
 
-	if (pos < size()) {
+	if ((unsigned)pos < size()) {
 		return;
 	}
 	throw(std::out_of_range(NULL));

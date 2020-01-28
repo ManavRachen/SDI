@@ -1,6 +1,6 @@
 #pragma once
 
-class DoublyLinkedList
+class DoublyLinkedList : SortingAlgorithms< DoublyLinkedList, DoubleNode, int >
 {
 public:
 	DoublyLinkedList();
@@ -19,6 +19,8 @@ public:
 	DoubleNode* back(); //Return final node
 
 	void populate(unsigned int size); //Add x amount of random nodes to end of list
+
+	void sort();
 
 	unsigned int size();
 	void print();

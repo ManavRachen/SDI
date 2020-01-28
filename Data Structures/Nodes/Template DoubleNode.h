@@ -5,6 +5,7 @@ struct DoubleNodeT
 {
 public:
 	~DoubleNodeT() { right = nullptr; left = nullptr; }
+	DoubleNodeT* operator ++ (int) { return right; }
 
 	DoubleNodeT* left;
 	DoubleNodeT* right;

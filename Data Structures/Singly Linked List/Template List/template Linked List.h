@@ -4,11 +4,14 @@
 
 
 template<typename Type>
-class LinkedListT
+class LinkedListT : SortingAlgorithms< LinkedListT<Type>, NodeT<Type>, Type >
 {
 public:
 
+
+
 	//Operators------------------------------------------------------//
+
 	
 	//Constructor
 	LinkedListT() { 
@@ -148,8 +151,8 @@ public:
 
 	//Add x amount of nodes to end of list
 	void populate(unsigned int size) {
-		for (int i = 0; i <= size - 1; ++i) {
-			Type a;
+		for (unsigned int i = 0; i <= size - 1; ++i) {
+			Type a = NULL;
 			prepend(a);
 		}
 	}
@@ -167,6 +170,13 @@ public:
 		std::cout << std::endl;
 	}
 
+
+
+	//Sorting
+
+	void sort() {
+		this->selectionSort(this);
+	}
 
 	
 private:	

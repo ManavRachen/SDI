@@ -106,7 +106,7 @@ Node* LinkedList::back(){
 void LinkedList::populate(unsigned int size) {
 	srand( (int) std::time(NULL) );
 
-	for (int i = 0; i <= size - 1; ++i) {
+	for (unsigned int i = 0; i <= size - 1; ++i) {
 		prepend(rand());
 	}
 }
@@ -132,6 +132,13 @@ void LinkedList::print() {
 		count++;
 	}
 	std::cout << std::endl;
+}
+
+
+//Sorting
+
+void LinkedList::sort() {
+	this->selectionSort(this);
 }
 
 

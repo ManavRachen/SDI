@@ -154,6 +154,8 @@
     <ClInclude Include="..\Data Structures\Binary Search Tree\BinarySearchTree.h" />
     <ClInclude Include="..\Data Structures\Doubly Linked List\DoublyLinkedList.h" />
     <ClInclude Include="..\Data Structures\Doubly Linked List\Template DoubleList\Template DoublyLinkedList.h" />
+    <ClInclude Include="..\Data Structures\File.h" />
+    <ClInclude Include="..\Data Structures\Iterator.h" />
     <ClInclude Include="..\Data Structures\Nodes\DoubleNode.h" />
     <ClInclude Include="..\Data Structures\Nodes\Node.h" />
     <ClInclude Include="..\Data Structures\Nodes\Template DoubleNode.h" />
@@ -162,6 +164,7 @@
     <ClInclude Include="..\Data Structures\Simple Structures\Stack.h" />
     <ClInclude Include="..\Data Structures\Singly Linked List\LinkedList.h" />
     <ClInclude Include="..\Data Structures\Singly Linked List\Template List\template Linked List.h" />
+    <ClInclude Include="..\Data Structures\Sorting Algorithms\Sorting Algorithms.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>

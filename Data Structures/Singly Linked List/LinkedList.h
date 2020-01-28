@@ -1,6 +1,6 @@
 #pragma once
 
-class LinkedList
+class LinkedList : SortingAlgorithms< LinkedList, Node, int >
 {
 public:
 	LinkedList();
@@ -19,6 +19,8 @@ public:
 	Node* back(); //Return final node
 
 	void populate(unsigned int size); //Add x amount of random nodes to end of list
+
+	void sort();
 
 	unsigned int size();
 	void print();

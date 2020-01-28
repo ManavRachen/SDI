@@ -1,9 +1,10 @@
 #pragma once
 
-struct Node
+class Node
 {
 public:
 	~Node() { next = nullptr; }
+	Node* operator ++ (int) { return next; }
 
 	Node* next;
 	int data;

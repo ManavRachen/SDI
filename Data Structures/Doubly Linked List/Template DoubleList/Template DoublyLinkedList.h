@@ -3,7 +3,7 @@
 #include <string>
 
 template<typename Type = int>
-class DoublyLinkedListT
+class DoublyLinkedListT : SortingAlgorithms< LinkedListT<Type>, NodeT<Type>, Type >
 {
 public:
 
@@ -177,6 +177,11 @@ public:
 	}
 
 
+	//Sorting
+
+	void sort() {
+		this->selectionSort(this);
+	}
 
 private:
 	DoubleNodeT<Type>* head;
