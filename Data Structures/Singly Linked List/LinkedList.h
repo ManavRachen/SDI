@@ -5,7 +5,7 @@ class LinkedList : SortingAlgorithms< LinkedList, Node, int >
 public:
 	LinkedList();
 	~LinkedList();
-	Node* operator[](unsigned int pos); //Overloads the [] operator ~ calls Search()
+	Node* operator[](unsigned int pos); //Overloads the [] operator ~ calls at()
 
 	void append(int data); //Add node at end of list
 	void prepend(int data); //Add node at start of list

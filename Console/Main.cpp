@@ -11,7 +11,7 @@
 int main()
 {
 
-	LinkedList a;
+	LinkedListT<int> a;
 	a.append(2); a.append(1); a.append(3); a.append(1); a.append(4); a.append(1); a.append(9); a.append(6);	
 
 	a.print();

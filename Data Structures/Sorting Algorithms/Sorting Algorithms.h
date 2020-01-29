@@ -4,17 +4,31 @@ template<typename ListType, typename NodeType, typename Type>
 class SortingAlgorithms {
 
 
-public:
+protected:
 
 	void selectionSort(ListType* List) {
-		int size = List->size();
+		Iterator<NodeType> current;
 
-		for (int current = 0; current < size; current++) {
-			NodeType* smallNode = findSmallest(List->at(current));
-			swap(List->at(current), smallNode);
+		for (current = List->front(); current != List->back(); current++) {
+			NodeType* smallestNode = findSmallest(*current);
+			swap(*current, smallestNode);
 		}
 	}
 
+	void insertionSort(ListType* List) { // DOES NOT WORK WITH SINGLY LINKED LISTS
+		Iterator<NodeType> sortedIndex, compare, current;
+
+		for (sortedIndex = List->front(); sortedIndex != nullptr; sortedIndex++) { // Iterate through the list
+			current = sortedIndex;
+
+			for (compare = current; compare != nullptr; compare--) {		// Decend down the sorted elements
+				if (current < *compare) {
+					swap(*current, *compare);
+					current--;
+				}	
+			}
+		}
+	}
 
 
 private:
@@ -40,6 +54,8 @@ private:
 
 		first->data = second->data;
 		second->data = temp;
+
+
 	}
 };
 

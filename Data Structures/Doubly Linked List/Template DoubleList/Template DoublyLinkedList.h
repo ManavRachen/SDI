@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 
-template<typename Type = int>
-class DoublyLinkedListT : SortingAlgorithms< LinkedListT<Type>, NodeT<Type>, Type >
+template<typename Type>
+class DoublyLinkedListT : SortingAlgorithms< DoublyLinkedListT<Type>, DoubleNodeT<Type>, Type >
 {
 public:
 
@@ -176,6 +176,28 @@ public:
 		return count;
 	}
 
+	//User Features--------------------------------------------------//
+
+	//Add x amount of nodes to end of list
+	void populate(unsigned int size) {
+		for (unsigned int i = 0; i <= size - 1; ++i) {
+			Type a = NULL;
+			prepend(a);
+		}
+	}
+
+	//Prints the list
+	void print() {
+		DoubleNodeT<Type>* node = head;
+		int count = 1;
+
+		while (node) {
+			std::cout << count << ": " << node->data << std::endl;
+			node = node->right;
+			count++;
+		}
+		std::cout << std::endl;
+	}
 
 	//Sorting
 

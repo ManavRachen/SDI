@@ -1,2 +1,10 @@
-﻿  Main.cpp
+﻿  pch.cpp
+  BinarySearchTree.cpp
+  DoublyLinkedList.cpp
+  LinkedList.cpp
+  Bubble Sort.cpp
+  Insertion Sort.cpp
+  Merge Sort.cpp
+  Main.cpp
+  Generating Code...
   SDI Project.vcxproj -> D:\Users\Brad\Desktop\SDI\Console\x64\Debug\SDI Project.exe
