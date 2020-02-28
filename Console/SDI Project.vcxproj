@@ -163,30 +163,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\Data Structures\Array\Array.h" />
-    <ClInclude Include="..\Data Structures\Binary Search Tree\BinarySearchTree.h" />
-    <ClInclude Include="..\Data Structures\Doubly Linked List\DoublyLinkedList.h" />
-    <ClInclude Include="..\Data Structures\Doubly Linked List\Template DoubleList\Template DoublyLinkedList.h" />
+    <ClInclude Include="..\Data Structures\Array.h" />
+    <ClInclude Include="..\Data Structures\BinarySearchTree.h" />
+    <ClInclude Include="..\Data Structures\DoublyLinkedList.h" />
     <ClInclude Include="..\Data Structures\File.h" />
     <ClInclude Include="..\Data Structures\Iterator.h" />
-    <ClInclude Include="..\Data Structures\Nodes\DoubleNode.h" />
-    <ClInclude Include="..\Data Structures\Nodes\Node.h" />
-    <ClInclude Include="..\Data Structures\Nodes\Template DoubleNode.h" />
-    <ClInclude Include="..\Data Structures\Nodes\template Node.h" />
-    <ClInclude Include="..\Data Structures\Simple Structures\Queue.h" />
-    <ClInclude Include="..\Data Structures\Simple Structures\Stack.h" />
-    <ClInclude Include="..\Data Structures\Singly Linked List\LinkedList.h" />
-    <ClInclude Include="..\Data Structures\Singly Linked List\Template List\template Linked List.h" />
-    <ClInclude Include="..\Data Structures\Sorting Algorithms\Sorting Algorithms.h" />
+    <ClInclude Include="..\Data Structures\Linked List.h" />
+    <ClInclude Include="..\Data Structures\Nodes.h" />
+    <ClInclude Include="..\Data Structures\Queue.h" />
+    <ClInclude Include="..\Data Structures\Sorting Algorithms.h" />
+    <ClInclude Include="..\Data Structures\Stack.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Data Structures\Binary Search Tree\BinarySearchTree.cpp" />
-    <ClCompile Include="..\Data Structures\Doubly Linked List\DoublyLinkedList.cpp" />
-    <ClCompile Include="..\Data Structures\Singly Linked List\LinkedList.cpp" />
-    <ClCompile Include="..\Data Structures\Sorting Algorithms\Bubble Sort.cpp" />
-    <ClCompile Include="..\Data Structures\Sorting Algorithms\Insertion Sort.cpp" />
-    <ClCompile Include="..\Data Structures\Sorting Algorithms\Merge Sort.cpp" />
+    <ClCompile Include="..\Data Structures\BinarySearchTree.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
