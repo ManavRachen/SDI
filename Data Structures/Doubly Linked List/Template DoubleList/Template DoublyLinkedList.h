@@ -3,7 +3,7 @@
 #include <string>
 
 template<typename Type>
-class DoublyLinkedListT : SortingAlgorithms< DoublyLinkedListT<Type>, DoubleNodeT<Type>, Type >
+class DoublyLinkedListT : SortingAlgorithms< DoublyLinkedListT<Type>, DoubleNodeT<Type>>
 {
 public:
 
@@ -76,6 +76,10 @@ public:
 		node->left = previous;
 		previous->right = node;
 		after->left = node;
+
+	}
+
+	void swap(DoubleNode* first, DoubleNode* second) {
 
 	}
 
@@ -200,9 +204,8 @@ public:
 	}
 
 	//Sorting
-
 	void sort() {
-		this->selectionSort(this);
+		selectionSort(this);
 	}
 
 private:

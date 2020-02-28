@@ -1,6 +1,6 @@
 #pragma once
 
-class DoublyLinkedList : SortingAlgorithms< DoublyLinkedList, DoubleNode, int >
+class DoublyLinkedList : SortingAlgorithms< DoublyLinkedList, DoubleNode>
 {
 public:
 	DoublyLinkedList();
@@ -10,6 +10,11 @@ public:
 	void append(int data); //Add node at end of list
 	void prepend(int data); //Add node at start of list
 	void insert(int data, int pos); //Add node at index x
+
+	void swap(DoubleNode* first, DoubleNode* second) {
+
+	}
+
 	void popBack(); //Delete node at end of list
 	void popFront(); //Delete node at start of list
 	void del(int pos); //Delete node at index x

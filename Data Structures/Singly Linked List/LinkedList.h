@@ -1,6 +1,6 @@
 #pragma once
 
-class LinkedList : SortingAlgorithms< LinkedList, Node, int >
+class LinkedList : SortingAlgorithms< LinkedList, Node>
 {
 public:
 	LinkedList();
@@ -10,6 +10,11 @@ public:
 	void append(int data); //Add node at end of list
 	void prepend(int data); //Add node at start of list
 	void insert(int data, unsigned int pos); //Add node at index x
+
+	void swap(Node* first, Node* second) {
+
+	}
+
 	void popBack(); //Delete node at end of list
 	void popFront(); //Delete node at start of list
 	void del(unsigned int pos); //Delete node at index x

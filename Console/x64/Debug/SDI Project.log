@@ -1,10 +1,7 @@
-﻿  pch.cpp
-  BinarySearchTree.cpp
-  DoublyLinkedList.cpp
-  LinkedList.cpp
-  Bubble Sort.cpp
-  Insertion Sort.cpp
-  Merge Sort.cpp
-  Main.cpp
-  Generating Code...
-  SDI Project.vcxproj -> D:\Users\Brad\Desktop\SDI\Console\x64\Debug\SDI Project.exe
+﻿  Main.cpp
+d:\users\brad\desktop\sd&i\sdi\console\main.cpp(4): warning C4326: return type of 'main' should be 'int' instead of 'void'
+d:\users\brad\desktop\sd&i\sdi\data structures\array\array.h(54): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  d:\users\brad\desktop\sd&i\sdi\data structures\array\array.h(53): note: while compiling class template member function 'int Array<int>::capacity(void)'
+  d:\users\brad\desktop\sd&i\sdi\data structures\array\array.h(78): note: see reference to function template instantiation 'int Array<int>::capacity(void)' being compiled
+  d:\users\brad\desktop\sd&i\sdi\console\main.cpp(5): note: see reference to class template instantiation 'Array<int>' being compiled
+  SDI Project.vcxproj -> D:\Users\Brad\Desktop\SD&I\SDI\Console\x64\Debug\SDI Project.exe

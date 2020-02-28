@@ -4,7 +4,7 @@
 
 
 template<typename Type>
-class LinkedListT : SortingAlgorithms< LinkedListT<Type>, NodeT<Type>, Type >
+class LinkedListT : SortingAlgorithms< LinkedListT<Type>, NodeT<Type>>
 {
 public:
 
@@ -71,6 +71,13 @@ public:
 		node->next = previous->next;
 		previous->next = node;
 
+	}
+
+	void swap(NodeT<Type>* first, NodeT<Type>* second) {
+		Type fData = first->data;
+
+		first->data = second->data;
+		second->data = fData;
 	}
 
 	//Delete node at end of list
@@ -175,7 +182,7 @@ public:
 	//Sorting
 
 	void sort() {
-		this->selectionSort(this);
+		this->pen(this);
 	}
 
 	

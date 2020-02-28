@@ -60,6 +60,9 @@
     <ClInclude Include="..\Data Structures\Iterator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Data Structures\Array\Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

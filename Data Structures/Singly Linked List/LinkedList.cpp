@@ -138,7 +138,7 @@ void LinkedList::print() {
 //Sorting
 
 void LinkedList::sort() {
-	this->selectionSort(this);
+	selectionSort(this);
 }
 
 

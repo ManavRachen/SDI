@@ -167,7 +167,7 @@ void DoublyLinkedList::print() {
 //Sorting
 
 void DoublyLinkedList::sort() {
-	this->insertionSort(this);
+	insertionSort(this);
 }
 
 //Private Functions
