@@ -4,7 +4,7 @@
 
 
 template<typename Type>
-class LinkedListT : SortingAlgorithms< LinkedListT<Type>, Node<Type>>
+class LinkedList : SortingAlgorithms< LinkedList<Type>, Node<Type>>
 {
 public:
 
@@ -14,12 +14,12 @@ public:
 
 	
 	//Constructor
-	LinkedListT() { 
+	LinkedList() { 
 		head = nullptr; 
 	}
 
 	//Destructor
-	~LinkedListT() {
+	~LinkedList() {
 		Node<Type>* head = this->head;
 		Node<Type>* next;
 

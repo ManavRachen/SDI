@@ -3,20 +3,20 @@
 #include <string>
 
 template<typename Type>
-class DoublyLinkedListT : SortingAlgorithms< DoublyLinkedListT<Type>, DoubleNode<Type>>
+class DoublyLinkedList : SortingAlgorithms< DoublyLinkedList<Type>, DoubleNode<Type>>
 {
 public:
 
 	//Operators------------------------------------------------------//
 
 	//Constructor
-	DoublyLinkedListT() {
+	DoublyLinkedList() {
 		head = nullptr;
 		tail = nullptr;
 	}
 
 	//Destructor
-	~DoublyLinkedListT() {
+	~DoublyLinkedList() {
 		DoubleNode<Type>* head = this->head;
 		DoubleNode<Type>* next;
 

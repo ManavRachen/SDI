@@ -7,7 +7,7 @@ void main() {
 	Array<int> a;
 	a.reserve(9);
 
-	LinkedListT<int> b;
+	LinkedList<int> b;
 
 	srand(time(NULL));
 	for (int i = 0; i <= 10; i++) {
@@ -17,4 +17,6 @@ void main() {
 	
 	b.sort();
 	b.print();
+
+	BinarySearchTree bb;
 }
