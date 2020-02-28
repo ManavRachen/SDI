@@ -182,7 +182,7 @@ public:
 	//Sorting
 
 	void sort() {
-		this->pen(this);
+		this->selectionSort(this);
 	}
 
 	

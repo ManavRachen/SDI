@@ -30,15 +30,6 @@ protected:
 		}
 	}
 
-	void pen(ListType* List) {
-		Iterator<NodeType> current;
-
-		current = List->front();
-		current++;
-		current != List->back();
-		
-	}
-
 
 private:
 

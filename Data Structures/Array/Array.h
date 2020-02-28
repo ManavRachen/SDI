@@ -140,12 +140,11 @@ public:
 
 	void print() {
 		for (int i = 0; i < index; i++) {
-			std::cout << at(i);
+			std::cout << at(i) << std::endl;
 		}
 	}
 	void sort() {
 		//this->selectionSort(this);
-		this->pen(this);
 	}
 
 private:

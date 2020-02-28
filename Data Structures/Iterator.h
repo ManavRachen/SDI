@@ -31,15 +31,7 @@ private:
 	NodeType* current;
 
 	NodeType* next() {
-		//if (current) { return (*current)++; }
-		if (current) {
-
-
-			current++;
-			//current = (*current)++;
-			//NodeType* next = current;
-			//next = (*current)++;
-			return current; }
+		if (current) { return (*current)++; }
 		throw(std::out_of_range(NULL));
 	}
 
