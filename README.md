@@ -1,8 +1,7 @@
-# SDI
-software design and implementation 
+# SDI Group Project
 
-## Project description 
+An image labeling tool for artificial inteligence training
 
-## Group 
 
-## Tutor
+## Group - 40
+## Tutor - David Adama
