@@ -8,14 +8,14 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	ui->setupUi(this);
 
 
-	QString file = "E:/Pictures/dggdgdhhd";
+	//QString file = "E:/Pictures/dggdgdhhd";
 
-	QPixmap picture(file);
+	//QPixmap picture(file);
 
-	item = new QGraphicsPixmapItem(picture);
-	scene = new QGraphicsScene(this);
-	ui->graphicsView->setScene(scene);
-	scene->addItem(item);
+	//item = new QGraphicsPixmapItem(picture);
+	//scene = new QGraphicsScene(this);
+	//ui->graphicsView->setScene(scene);
+	//scene->addItem(item);
 }
 
 MainWindow::~MainWindow()
