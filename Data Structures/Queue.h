@@ -1,33 +1,43 @@
 #pragma once
 
-template<typename Type>
-class Queue {
-public:
-	Queue() { head = nullptr; tail = nullptr; }
+namespace SDI {
 
-	void push(Type data) {
-		Node<Type>* node = new Node<Type>();
-		node->data = data;
+	/// A simple queue for basic operaton
+	template<typename Type>
+	class Queue {
+	public:
+		Queue() { head = nullptr; tail = nullptr; }
 
-		node->next = nullptr;
-		if (!head) { head = node; tail = node;  }
-		else { tail->next = node; }
-		
-		tail = node;
-	}
+		/// Push data to end of queue
+		void push(Type data) {
+			Node<Type>* node = new Node<Type>();
+			node->data = data;
 
-	void pop() {
-		Node<Type>* toDelete = head;
-		head = head->next;
-		delete toDelete;
-		if (!head) { tail = nullptr; }
-	}
+			node->next = nullptr;
+			if (!head) { head = node; tail = node; }
+			else { tail->next = node; }
 
-	Node<Type>* bottom() {
-		return head;
-	}
+			tail = node;
+		}
 
-private:
-	Node<Type>* head;
-	Node<Type>* tail;
-};
+		/// Remove data from front of queue
+		void pop() {
+			Node<Type>* toDelete = head;
+			head = head->next;
+			delete toDelete;
+			if (!head) { tail = nullptr; }
+		}
+
+		/// Return front of queue
+		Node<Type>* bottom() {
+			return head;
+		}
+
+	private:
+		/// Pointer to front of queue
+		Node<Type>* head;
+		/// Pointer to back of queue
+		Node<Type>* tail;
+	};
+
+}

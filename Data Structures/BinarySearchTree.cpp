@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "../Console/pch.h"
 
+using namespace SDI;
+
 //Operators--------------------------------------------------------------------------------------//
 
 //Constructor

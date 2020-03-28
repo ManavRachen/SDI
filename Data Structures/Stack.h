@@ -1,27 +1,37 @@
 #pragma once
 
-template<typename Type>
-class Stack {
-public:
-	Stack() { head = nullptr; }
+namespace SDI {
 
-	void push(Type data) {
-		Node<Type>* node = new Node<Type>();
-		node->data = data;
-		node->next = head;
-		head = node;
-	}
-	
-	void pop() {
-		Node<Type>* toDelete = head;
-		head = head->next ;
-		delete toDelete;
-	}
+	/// A simple stack for basic operaton
+	template<typename Type>
+	class Stack {
+	public:
+		Stack() { head = nullptr; }
 
-	Node<Type>* top() {
-		return head;
-	}
+		/// Push data to top of stack
+		void push(Type data) {
+			Node<Type>* node = new Node<Type>();
+			node->data = data;
+			node->next = head;
+			head = node;
+		}
 
-private:
-	Node<Type>* head;
-};
+		/// Remove data from top of stack
+		void pop() {
+			Node<Type>* toDelete = head;
+			head = head->next;
+			delete toDelete;
+		}
+
+		/// Return top of stack
+		Node<Type>* top() {
+			return head;
+		}
+
+	private:
+
+		/// Pointer to top of stack
+		Node<Type>* head;
+	};
+
+}

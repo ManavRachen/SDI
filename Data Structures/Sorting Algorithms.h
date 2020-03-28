@@ -1,67 +1,100 @@
 #pragma once
 
-template<typename ListType, typename NodeType>
-class SortingAlgorithms {
+namespace SDI {
+
+	/// Base class to be inherited by data structure | Gives data structures the ability to sort their elements 
+	template<typename ListType, typename NodeType>
+	class SortingAlgorithms {
 
 
-protected:
+	protected:
 
-	void selectionSort(ListType* List) {
-		Iterator<NodeType> current;
+		/// Peforms selection sort on an input list
+		void selectionSort(ListType* List, bool inAscending = true) {
+			Iterator<NodeType> current;
 
-		for (current = List->front(); current != List->back(); current++) { // Iterate through the list
-			NodeType* smallestNode = findSmallest(*current);
-			swap(List, *current, smallestNode);
+			if (inAscending) {
+				for (current = List->front(); current != List->back(); current++) { // Sort by smallest to largest
+					NodeType* smallestNode = findSmallest(*current);
+					swap(List, *current, smallestNode);
+				}
+			}
+			else {
+				for (current = List->front(); current != List->back(); current++) { // Sort by largest to smallest
+					NodeType* largestNode = findLargest(*current);
+					swap(List, *current, largestNode);
+				}
+			}
+
 		}
-	}
 
-	void insertionSort(ListType* List) { // DOES NOT WORK WITH SINGLY LINKED LISTS
-		Iterator<NodeType> sortedIndex, compare, current;
+		/// Peforms insertion sort on an input list
+		void insertionSort(ListType* List) { // DOES NOT WORK WITH SINGLY LINKED LISTS
+			Iterator<NodeType> sortedIndex, compare, current;
 
-		for (sortedIndex = List->front(); sortedIndex != nullptr; sortedIndex++) { // Advance Sorted Marker
-			current = sortedIndex;
+			for (sortedIndex = List->front(); sortedIndex != nullptr; sortedIndex++) { // Advance Sorted Marker
+				current = sortedIndex;
 
-			for (compare = current; compare != nullptr; compare--) {		// Decend down the sorted elements
-				if (current < *compare) {
-					swap(List, *current, *compare);
-					current--;
-				}	
+				for (compare = current; compare != nullptr; compare--) {		// Decend down the sorted elements
+					if (current < *compare) {
+						swap(List, *current, *compare);
+						current--;
+					}
+				}
 			}
 		}
-	}
 
 
-private:
+	private:
 
-	NodeType* findSmallest(NodeType* start) {
-		NodeType* smallest = start;
-		Iterator<NodeType> current;
-		current = smallest;
-		
-		while (*current) {
-			if (current < smallest) {
-				smallest = *current;
+		/// Returns pointer to the smallest node after the starting node
+		NodeType* findSmallest(NodeType* start) {
+			NodeType* smallest = start;
+			Iterator<NodeType> current;
+			current = *smallest;
+
+			while (*current) {
+				if (current < smallest) {
+					smallest = *current;
+				}
+				current++;
 			}
-			current++;
+
+			return smallest;
 		}
 
-		return smallest;
-	}
+		/// Returns pointer to the largest node after the starting node
+		NodeType* findLargest(NodeType* start) {
+			NodeType* largest = start;
+			Iterator<NodeType> current;
+			current = *largest;
+
+			while (*current) {
+				if (current > largest) {
+					largest = *current;
+				}
+				current++;
+			}
+
+			return largest;
+		}
+
+		/// Calls swap() on a List
+		void swap(ListType* List, NodeType* first, NodeType* second) {
+
+			List->swap(first, second);
 
 
-	void swap(ListType* List, NodeType* first, NodeType* second) {
+			//Type temp = first->data;
 
-		List->swap(first, second);
+			//first->data = second->data;
+			//second->data = temp;
 
+		}
 
-		//Type temp = first->data;
+	};
 
-		//first->data = second->data;
-		//second->data = temp;
-
-	}
-
-};
+}
 
 //
 //class Heap {

@@ -1,32 +1,53 @@
 #pragma once
 
-template<typename Type>
-struct Node
-{
-public:
-	~Node() { next = nullptr; }
+namespace SDI {
 
-	bool operator == (Type x) { return (data == x); }
+	/// A template typed singly linked node struct
+	template<typename Type>
+	struct Node
+	{
+	public:
+		Node() { next = nullptr; }
+		~Node() { next = nullptr; }
 
-	Node* operator + (int) { return next; }
-
-	Node* operator ++ (int) { return next; }
-	Node* operator -- (int) { throw(std::logic_error(NULL)); } // Has to be defined for template purposes
-
-	Node* next;
-	Type data;
-};
+		/// Comparison operator overload
+		bool operator == (Type x) { return (data == x); }
+		/// Iterate operator overload
+		Node* operator ++ (int) { return next; }
+		/// De-Iterate operator overload | Needs to be defined for template purposes, will always throw
+		Node* operator -- (int) { throw(std::logic_error(NULL)); }
 
 
-template<typename Type>
-struct DoubleNode
-{
-public:
-	~DoubleNode() { right = nullptr; left = nullptr; }
-	DoubleNode* operator ++ (int) { return right; }
-	DoubleNode* operator -- (int) { return left; }
+		/// Pointer to the next node
+		Node* next;
+		/// Held data of defined Type
+		Type data;
+	};
 
-	DoubleNode* left;
-	DoubleNode* right;
-	Type data;
-};
+	/// A template typed doubly linked node struct
+	template<typename Type>
+	struct DoubleNode
+	{
+	public:
+		DoubleNode() { left = nullptr; right = nullptr; }
+		~DoubleNode() { left = nullptr; right = nullptr; }
+
+		/// Comparison operator overload
+		bool operator == (Type x) { return (data == x); }
+		/// Iterate operator overload
+		DoubleNode* operator ++ (int) { return right; }
+		/// De-Iterate operator overload 
+		DoubleNode* operator -- (int) { return left; }
+
+
+		/// Pointer to the next node
+		DoubleNode* left;
+		/// Pointer to previous node
+		DoubleNode* right;
+		/// Held data of defined Type
+		Type data;
+	};
+
+}
+
+//Node* operator + (int) { return next; }
