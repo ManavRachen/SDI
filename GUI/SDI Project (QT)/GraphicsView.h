@@ -6,6 +6,8 @@ class GraphicsView : public QGraphicsView
 public:
 	GraphicsView(QWidget* parent = 0);
 
+	bool containsImage = false;
+
 protected:
 	void wheelEvent(QWheelEvent* event);
 	void mousePressEvent(QMouseEvent* event);

@@ -94,8 +94,12 @@ void GraphicsView::mouseMoveEvent(QMouseEvent *event) {
 		currentX = event->x();
 		currentY = event->y();
 
+		
 
-		scene()->invalidate(scene()->sceneRect());
+		if (containsImage) {
+			scene()->invalidate(scene()->sceneRect());
+		}
+		
 
 		
 

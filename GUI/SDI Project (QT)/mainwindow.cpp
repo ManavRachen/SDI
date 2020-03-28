@@ -80,6 +80,7 @@ void MainWindow::on_LoadImage_clicked()
 		ui->graphicsView->setScene(scene);
 		scene->addItem(item);
 
+		ui->graphicsView->containsImage = true;
 	}
 
 }
