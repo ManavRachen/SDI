@@ -1,5 +1,15 @@
 #pragma once
 
+class BoundingBox : public QRect 
+{
+
+public:
+
+	explicit BoundingBox(QRect x) : QRect(x) { }
+	QString name;
+};
+
+
 class GraphicsView : public QGraphicsView
 {
 
@@ -7,6 +17,8 @@ public:
 	GraphicsView(QWidget* parent = 0);
 
 	bool containsImage = false;
+
+	void openImage(QString file);
 
 protected:
 	void wheelEvent(QWheelEvent* event);
@@ -17,8 +29,10 @@ protected:
 	//void paintEvent(QPaintEvent* event);
 
 private:
+	QRect drawRect;
+	QRect* moveRect;
+
 	double viewScale = 1;
-	QRectF view;
 
 	int startX;
 	int startY;
@@ -28,5 +42,9 @@ private:
 
 	bool isPanning = false;
 	bool isDrawing = false;
+	bool isMoving = false;
+
+	QGraphicsItem* item;
+	QGraphicsScene* _scene;
 };
 

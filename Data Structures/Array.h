@@ -47,6 +47,13 @@ namespace SDI {
 			return (head + index - 1);
 		}
 
+		Type* begin() {
+			return front();
+		}
+		Type* end() {
+			return (head + index);
+		}
+
 
 		/// Check if there are any elements in the array
 		bool isEmpty() {
@@ -84,6 +91,7 @@ namespace SDI {
 		void clear() {
 			if (capacity()) {
 				free(head);
+				head = nullptr;
 				tail = head;
 				index = 0;
 			}

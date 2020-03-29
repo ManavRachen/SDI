@@ -32,7 +32,4 @@ private:
     Ui::MainWindow *ui;
 
 
-
-	QGraphicsItem* item;
-	QGraphicsScene* scene;
 };

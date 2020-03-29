@@ -2,20 +2,20 @@
 
 QString folder;
 SDI::LinkedList<QString> images;
+QString className;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
 	ui->setupUi(this);
 
 
-	//QString file = "E:/Pictures/dggdgdhhd";
+	QString file = "E:/Pictures/dggdgdhhd";
+	ui->graphicsView->openImage(file);
 
-	//QPixmap picture(file);
 
-	//item = new QGraphicsPixmapItem(picture);
-	//scene = new QGraphicsScene(this);
-	//ui->graphicsView->setScene(scene);
-	//scene->addItem(item);
+	
+
+
 }
 
 MainWindow::~MainWindow()
@@ -25,6 +25,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_ClassOpenButton_clicked()
 {
+	ui->ClassList->clear();
+
 	QString fileName = QFileDialog::getOpenFileName(this, "Open a file");
 	QFile file(fileName);
 
@@ -72,15 +74,7 @@ void MainWindow::on_LoadImage_clicked()
 	if (ui->ImageList->currentItem()) {
 
 		QString file = folder + ui->ImageList->currentItem()->text();
-
-		QPixmap picture(file);
-				
-		item = new QGraphicsPixmapItem(picture);
-		scene = new QGraphicsScene(this);
-		ui->graphicsView->setScene(scene);
-		scene->addItem(item);
-
-		ui->graphicsView->containsImage = true;
+		ui->graphicsView->openImage(file);
 	}
 
 }
