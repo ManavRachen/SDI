@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	ui->setupUi(this);
 
 
-	QString file = "E:/Pictures/dggdgdhhd";
-	ui->graphicsView->openImage(file);
+	//QString file = "E:/Pictures/dggdgdhhd";
+	//ui->graphicsView->openImage(file);
 
 
 	

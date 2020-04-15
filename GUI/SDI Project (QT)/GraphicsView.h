@@ -26,7 +26,6 @@ protected:
 	void mouseMoveEvent(QMouseEvent* event);
 	void mouseReleaseEvent(QMouseEvent* event);
 	void drawForeground(QPainter* painter, const QRectF& rect);
-	//void paintEvent(QPaintEvent* event);
 
 private:
 	QRect drawRect;
