@@ -2,6 +2,11 @@
 
 #define PCH_H
 
+namespace SDI {
+	class abddc {};
+}
+
+
 //
 #include <qapplication.h>
 

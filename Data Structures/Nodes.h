@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 namespace SDI {
 
 	/// A template typed singly linked node struct
@@ -50,4 +52,3 @@ namespace SDI {
 
 }
 
-//Node* operator + (int) { return next; }

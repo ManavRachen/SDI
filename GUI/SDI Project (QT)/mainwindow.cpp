@@ -8,14 +8,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
 	ui->setupUi(this);
 
-
-	//QString file = "E:/Pictures/dggdgdhhd";
-	//ui->graphicsView->openImage(file);
-
-
-	
-
-
 }
 
 MainWindow::~MainWindow()
@@ -26,6 +18,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_ClassOpenButton_clicked()
 {
 	ui->ClassList->clear();
+    ui->graphicsView->current = nullptr;
 
 	QString fileName = QFileDialog::getOpenFileName(this, "Open a file");
 	QFile file(fileName);
@@ -43,18 +36,31 @@ void MainWindow::on_ClassOpenButton_clicked()
 	file.close();
 }
 
+void MainWindow::on_ClassList_itemClicked(){
+
+    ui->graphicsView->current = ui->ClassList->currentItem()->text();
+    qDebug() << "Change Box Name to " << ui->graphicsView->current;
+
+}
+
 void MainWindow::on_ImageFolderButton_clicked()
 {
 	ui->ImageList->clear();
+    ui->graphicsView->openImage("");
+    ui->graphicsView->containsImage = false;
+    ui->SaveBtn->fileName = "";
 
 	QString folderName = QFileDialog::getExistingDirectory();
 
 	if (folderName == "") {
 		QMessageBox::warning(this, "title", "No folder selected");
+        ui->SaveBtn->folderName = "";
+
 		return;
 	}
 
 	folder = folderName + "/";
+    ui->SaveBtn->folderName = folder;
 
 	QDir directory(folderName);
 
@@ -75,6 +81,13 @@ void MainWindow::on_LoadImage_clicked()
 
 		QString file = folder + ui->ImageList->currentItem()->text();
 		ui->graphicsView->openImage(file);
+        ui->graphicsView->containsImage = true;
+        ui->SaveBtn->fileName = ui->ImageList->currentItem()->text();
+
+        QPixmap q(file);
+        ui->SaveBtn->width = q.width();
+        ui->SaveBtn->height = q.height();
+
 	}
 
 }
@@ -108,4 +121,3 @@ void MainWindow::on_SortButton_clicked()
 	}
 
 }
-

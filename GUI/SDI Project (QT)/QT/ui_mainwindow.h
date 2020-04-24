@@ -51,9 +51,11 @@ public:
     QVBoxLayout *verticalLayout_6;
     QLabel *OutputLabel;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    Output *SaveBtn;
+    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label;
+    QLabel *label_2;
     GraphicsView *graphicsView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -164,20 +166,10 @@ public:
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        pushButton_4 = new QPushButton(verticalWidget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
+        SaveBtn = new Output(verticalWidget);
+        SaveBtn->setObjectName(QString::fromUtf8("SaveBtn"));
 
-        horizontalLayout_2->addWidget(pushButton_4);
-
-        pushButton_2 = new QPushButton(verticalWidget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        horizontalLayout_2->addWidget(pushButton_2);
-
-        pushButton_3 = new QPushButton(verticalWidget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        horizontalLayout_2->addWidget(pushButton_3);
+        horizontalLayout_2->addWidget(SaveBtn);
 
 
         verticalLayout_6->addLayout(horizontalLayout_2);
@@ -188,12 +180,35 @@ public:
 
         horizontalLayout_4->addWidget(verticalWidget);
 
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        label = new QLabel(centralwidget);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setAlignment(Qt::AlignCenter);
+        label->setIndent(0);
+
+        horizontalLayout_3->addWidget(label);
+
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_3->addWidget(label_2);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_3);
+
         graphicsView = new GraphicsView(centralwidget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-        horizontalLayout_4->addWidget(graphicsView);
+        verticalLayout_2->addWidget(graphicsView);
+
+
+        horizontalLayout_4->addLayout(verticalLayout_2);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -219,9 +234,67 @@ public:
         ClassesLabel->setText(QCoreApplication::translate("MainWindow", "Classes", nullptr));
         ClassOpenButton->setText(QCoreApplication::translate("MainWindow", "Open Text File", nullptr));
         OutputLabel->setText(QCoreApplication::translate("MainWindow", "Output", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Save COCO", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Save YOLO", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Save VOC", nullptr));
+        SaveBtn->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "<html>\n"
+"\n"
+"<head/>\n"
+"\n"
+"<body>\n"
+"\n"
+"<p>\n"
+"<span style=\" font-weight:600;\">\n"
+"LMB\n"
+"</span>\n"
+"\n"
+"<span style=\" font-style:italic;\">\n"
+" - Drawing and Resizing\n"
+"</span>\n"
+"\n"
+"<br>\n"
+"\n"
+"<span style=\" font-weight:600;\">\n"
+"RMB\n"
+"</span>\n"
+"\n"
+"<span style=\" font-style:italic;\">\n"
+" - Canvas Panning\n"
+"</span>\n"
+"\n"
+"</p>\n"
+"\n"
+"</body>\n"
+"\n"
+"</html>", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "<html>\n"
+"\n"
+"<head/>\n"
+"\n"
+"<body>\n"
+"\n"
+"<p>\n"
+"<span style=\" font-weight:600;\">\n"
+"MMB\n"
+"</span>\n"
+"\n"
+"<span style=\" font-style:italic;\">\n"
+" - Selection and Translation\n"
+"</span>\n"
+"\n"
+"<br>\n"
+"\n"
+"<span style=\" font-weight:600;\">\n"
+"Delete\n"
+"</span>\n"
+"\n"
+"<span style=\" font-style:italic;\">\n"
+" - Delete Current Selection\n"
+"</span>\n"
+"\n"
+"</p>\n"
+"\n"
+"</body>\n"
+"\n"
+"</html>", nullptr));
     } // retranslateUi
 
 };
