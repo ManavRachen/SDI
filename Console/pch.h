@@ -17,4 +17,5 @@
 #include "../Data Structures/BinarySearchTree.h"
 
 
-//
+// Tests
+#include "../Tests/"
