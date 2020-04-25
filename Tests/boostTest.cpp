@@ -1,5 +1,5 @@
+#include "Boost Test Console\pch.h"
 #include "pch.h"
-
 #define BOOST_TEST_MODULE mytests
 #include <boost/test/included/unit_test.hpp>
 
